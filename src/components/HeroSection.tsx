@@ -9,13 +9,13 @@ const HeroSection = () => {
   return (
     <div className="lg:flex lg:h-screen">
       {/* Left side Panel */}
-      <div className="px-8 py-12 max-w-md mx-auto sm:max-w-xl lg:w-2/3 lg:p-48 flex flex-col items-baseline bg-hero-image bg-cover">
-        <h2 className="scroll-m-20 font-bold tracking-wide leading-6 transition-colors first:mt-0 lg:leading-8">
+      <div className="flex flex-col items-baseline max-w-md px-8 py-12 mx-auto bg-cover sm:max-w-xl lg:w-2/3 lg:p-48 bg-hero-image">
+        <h2 className="font-bold leading-6 tracking-wide transition-colors scroll-m-20 first:mt-0 lg:leading-8">
           <span className="text-4xl sm:text-5xl lg:text-6xl text-[#F5AA0E]">
-            Baba Fareed
+            Rayya Muneez
           </span>{" "}
           <br />{" "}
-          <span className="text-xl sm:text-2xl lg:text-3xl text-white">
+          <span className="text-xl text-white sm:text-2xl lg:text-3xl">
             {" "}
             Construction & Developers Company
           </span>
@@ -29,18 +29,18 @@ const HeroSection = () => {
 
       {/* Right Side Panel  */}
       <div className="px-8 py-6 max-w-md mx-auto flex justify-center items-center sm:max-w-xl lg:w-1/3 lg:px-16 lg:py-12 flex-col lg:items-baseline bg-[#F5AA0E]">
-        <h2 className="scroll-m-20 pb-6 mt-6 text-3xl font-bold tracking-wide transition-colors lg:first:mt-16">
+        <h2 className="pb-6 mt-6 text-3xl font-bold tracking-wide transition-colors scroll-m-20 lg:first:mt-16">
           Our Services
         </h2>
 
         {/* Design & Build */}
 
-        <div className="flex ml-6 gap-8 mt-10">
+        <div className="flex gap-8 mt-10 ml-6">
           <div className="text-6xl font-normal text-white">
             <BiSolidBuildingHouse />
           </div>
           <div>
-            <h4 className="scroll-m-20 text-lg font-bold tracking-wide">
+            <h4 className="text-lg font-bold tracking-wide scroll-m-20">
               Design & Build
             </h4>
             <p className="leading-5 [&:not(:first-child)]:mt-2 text-xs text-justify text-white">
@@ -52,12 +52,12 @@ const HeroSection = () => {
 
         {/* Foundation Work */}
 
-        <div className="flex ml-6 gap-8 mt-10">
+        <div className="flex gap-8 mt-10 ml-6">
           <div className="text-6xl font-normal text-white">
             <MdFoundation />
           </div>
           <div>
-            <h4 className="scroll-m-20 text-lg font-bold tracking-wide">
+            <h4 className="text-lg font-bold tracking-wide scroll-m-20">
               Foundation Work
             </h4>
             <p className="leading-5 [&:not(:first-child)]:mt-2 text-xs text-justify text-white">
@@ -69,12 +69,12 @@ const HeroSection = () => {
 
         {/* Renovation */}
 
-        <div className="flex ml-6 gap-8 mt-10">
+        <div className="flex gap-8 mt-10 ml-6">
           <div className="text-6xl font-normal text-white">
             <GiPaintBucket />
           </div>
           <div>
-            <h4 className="scroll-m-20 text-lg font-bold tracking-wide">
+            <h4 className="text-lg font-bold tracking-wide scroll-m-20">
               Renovation
             </h4>
             <p className="leading-5 [&:not(:first-child)]:mt-2 text-xs text-justify text-white">
