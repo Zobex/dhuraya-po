@@ -2,7 +2,7 @@ import React from "react";
 
 function VedioSection() {
   return (
-    <div className="w-full bg-slate-600">
+    <div className="w-full bg-transparent">
       <div className="vedioBox">
         <video
           src="/assets/vedio.mp4"
