@@ -5,11 +5,13 @@ import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
+import VedioSection from "@/components/VedioSection";
 
 export default function Home() {
   return (
     <>
       <Navbar />
+      <VedioSection />
       <HeroSection />
       <Features />
       <LatestProjects />
