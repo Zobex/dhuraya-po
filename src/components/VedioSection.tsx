@@ -5,7 +5,7 @@ function VedioSection() {
     <div className="w-full bg-transparent">
       <div className="vedioBox">
         <video
-          src="/assets/vedio.mp4"
+          src="/assets/video.mp4"
           className="w-full titleInfo"
           autoPlay
           loop
