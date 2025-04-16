@@ -5,9 +5,10 @@ function VedioSection() {
     <video
       src="/assets/video.mp4"
       className="w-full titleInfo"
-      autoPlay
-      loop
-      muted
+      // autoPlay
+      // loop
+      // muted
+      controls
     />
   );
 }
