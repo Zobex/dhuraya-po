@@ -4,10 +4,12 @@ import LatestProjects from "@/components/LatestProjects";
 import About from "@/components/About";
 import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
+import Navbar from "@/components/Navbar";
 
 export default function Home() {
   return (
     <>
+      <Navbar />
       <HeroSection />
       <Features />
       <LatestProjects />
