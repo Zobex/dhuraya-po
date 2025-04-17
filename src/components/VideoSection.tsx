@@ -1,16 +1,16 @@
 import React from "react";
 
-function VedioSection() {
+function VideoSection() {
   return (
     <video
       src="/assets/video.mp4"
       className="w-full titleInfo"
-      // autoPlay
-      // loop
-      // muted
+      autoPlay
+      loop
+      muted
       controls
     />
   );
 }
 
-export default VedioSection;
+export default VideoSection;
