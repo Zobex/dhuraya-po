@@ -1,18 +1,8 @@
-"use client";
 import React from "react";
 
-function VideoSection() {
-  const videoRef = React.useRef<HTMLVideoElement>(null);
-  console.log("");
-  React.useEffect(() => {
-    videoRef.current?.play().catch((err) => {
-      console.warn("Autoplay failed", err);
-    });
-  }, []);
-
+const VideoSection = () => {
   return (
     <video
-      ref={videoRef}
       src="/assets/video.mp4"
       className="w-full titleInfo"
       autoPlay
@@ -21,6 +11,6 @@ function VideoSection() {
       playsInline
     />
   );
-}
+};
 
 export default VideoSection;

@@ -6,12 +6,14 @@ import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Navbar from "@/components/Navbar";
 import VideoSection from "@/components/VideoSection";
+import HomeHero from "@/components/HomeHero";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <VideoSection />
+      <HomeHero />
+      {/* <VideoSection /> */}
       <HeroSection />
       <Features />
       {/* <LatestProjects /> */}
