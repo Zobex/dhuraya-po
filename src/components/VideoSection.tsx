@@ -8,7 +8,7 @@ function VideoSection() {
       autoPlay
       loop
       muted
-      controls
+      playsInline
     />
   );
 }
