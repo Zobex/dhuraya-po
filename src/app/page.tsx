@@ -14,10 +14,10 @@ export default function Home() {
       <VideoSection />
       <HeroSection />
       <Features />
-      <LatestProjects />
-      <About />
+      {/* <LatestProjects /> */}
+      {/* <About /> */}
       {/* <Testimonials /> */}
-      <Contact />
+      {/* <Contact /> */}
     </>
   );
 }
