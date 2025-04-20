@@ -9,10 +9,11 @@ function VideoSection() {
       console.warn("Autoplay failed", err);
     });
   }, []);
+
   return (
     <video
       ref={videoRef}
-      src="/assets/vedio.mp4"
+      src="/assets/video.mp4"
       className="w-full titleInfo"
       autoPlay
       loop
