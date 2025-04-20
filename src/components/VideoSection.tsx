@@ -3,7 +3,7 @@ import React from "react";
 
 function VideoSection() {
   const videoRef = React.useRef<HTMLVideoElement>(null);
-
+  console.log("");
   React.useEffect(() => {
     videoRef.current?.play().catch((err) => {
       console.warn("Autoplay failed", err);
