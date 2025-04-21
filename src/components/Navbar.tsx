@@ -1,24 +1,39 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="sticky top-0 z-50 px-6 py-4 text-white bg-orange-500 shadow-md">
-      <div className="container flex items-center justify-between mx-auto">
-        {/* Logo and Site Title */}
-        <Link href="/" className="flex items-center space-x-2">
+    <nav className="sticky top-0 z-50 bg-orange-500 shadow-md">
+      <div className="container flex items-center justify-between px-6 py-4 mx-auto text-white">
+        {/* Logo and Brand */}
+        <Link href="/" className="flex items-center gap-3">
           <Image
-            src="/assets/logo.png" // Make sure this exists in your /public folder
+            src="/assets/logo.png"
             alt="Eden Isles Escape logo"
-            width={60}
-            height={60}
+            width={50}
+            height={50}
             className="rounded-full"
           />
-          <span className="text-2xl font-bold">Eden Isles Escape</span>
+          <span className="text-xl font-bold">Eden Isles Escapes</span>
         </Link>
 
-        {/* Nav Links */}
-        <ul className="flex space-x-6">
+        {/* Hamburger Icon (Mobile) */}
+        <button
+          className="text-white md:hidden"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
+          {isOpen ? <HiOutlineX size={28} /> : <HiOutlineMenu size={28} />}
+        </button>
+
+        {/* Desktop Links */}
+        <ul className="hidden space-x-6 text-sm font-medium md:flex">
           <li>
             <Link href="/" className="hover:text-orange-100">
               Home
@@ -41,6 +56,50 @@ export default function Navbar() {
           </li>
         </ul>
       </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="px-6 pb-4 md:hidden">
+          <ul className="flex flex-col gap-4 text-sm font-medium text-white hover:text-orange-800">
+            <li>
+              <Link
+                href="/"
+                className="hover:text-orange-100"
+                onClick={() => setIsOpen(false)}
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/about"
+                className="hover:text-orange-100"
+                onClick={() => setIsOpen(false)}
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/explore"
+                className="hover:text-orange-100"
+                onClick={() => setIsOpen(false)}
+              >
+                Packages
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                className="hover:text-orange-100"
+                onClick={() => setIsOpen(false)}
+              >
+                Contact
+              </Link>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
