@@ -64,7 +64,7 @@ const Contact = () => {
         <div>
           <h4 className="mb-4 text-lg font-semibold">Contact</h4>
           <ul className="space-y-2 text-sm text-gray-700">
-            <li
+            {/* <li
               className="flex items-center gap-2 cursor-pointer"
               onClick={handleCopy}
             >
@@ -73,7 +73,21 @@ const Contact = () => {
                 +960 777 6108
               </span>
               {copied && <FaCheck className="ml-1 text-green-500" />}
+            </li> */}
+            <li className="flex items-center gap-2">
+              <FaPhoneAlt className="text-orange-600" />
+              <a
+                href="https://wa.me/9607776108"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-orange-600"
+                onClick={handleCopy}
+              >
+                +960 777 6108
+              </a>
+              {copied && <FaCheck className="ml-1 text-green-500" />}
             </li>
+
             <li className="flex items-center gap-2">
               <FaEnvelope className="text-orange-600" />
               <a
