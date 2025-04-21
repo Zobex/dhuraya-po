@@ -11,7 +11,6 @@ import HomeHero from "@/components/HomeHero";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <HomeHero />
       {/* <VideoSection /> */}
       <HeroSection />
@@ -19,7 +18,6 @@ export default function Home() {
       {/* <LatestProjects /> */}
       {/* <About /> */}
       {/* <Testimonials /> */}
-      {/* <Contact /> */}
     </>
   );
 }
