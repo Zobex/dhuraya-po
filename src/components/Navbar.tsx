@@ -10,17 +10,19 @@ export default function Navbar() {
 
   return (
     <nav className="sticky top-0 z-50 bg-orange-500 shadow-md">
-      <div className="container flex items-center justify-between px-6 py-4 mx-auto text-white">
+      <div className="container flex items-center justify-between px-6 py-0 mx-auto text-white">
         {/* Logo and Brand */}
-        <Link href="/" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-4">
           <Image
             src="/assets/logo.png"
             alt="Eden Isles Escape logo"
-            width={50}
-            height={50}
+            width={130}
+            height={130}
             className="rounded-full"
           />
-          <span className="text-xl font-bold">Eden Isles Escapes</span>
+          <span className="text-2xl font-bold md:text-3xl">
+            Eden Isles Escapes
+          </span>
         </Link>
 
         {/* Hamburger Icon (Mobile) */}

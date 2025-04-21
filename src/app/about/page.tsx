@@ -10,9 +10,9 @@ const About = () => {
             About Eden Isles Escapes
           </h1>
           <p className="max-w-2xl mx-auto text-lg text-gray-700">
-            At Eden Isles Escapes Tours, we don’t just plan trips — we create
-            joyful stories, lasting memories, and soulful escapes. Our mission
-            is simple: help you see the world with wonder, curiosity, and ease.
+            At Eden Isles Escapes, we don’t just plan trips — we create joyful
+            stories, lasting memories, and soulful escapes. Our mission is
+            simple: help you see the world with wonder, curiosity, and ease.
           </p>
         </div>
 

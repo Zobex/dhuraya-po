@@ -13,7 +13,7 @@ const HeroSection = () => {
         {/* Left Content */}
         <div className="space-y-6 text-center md:text-left">
           <h1 className="text-5xl font-extrabold leading-tight text-orange-700">
-            Welcome to Eden Isles Escapes Tours
+            Welcome to Eden Isles Escapes
           </h1>
           <p className="text-lg text-orange-900">
             Let’s turn your dream vacation into reality. Explore the world with
