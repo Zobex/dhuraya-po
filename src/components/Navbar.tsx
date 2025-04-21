@@ -12,7 +12,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-orange-500 shadow-md">
       <div className="container flex items-center justify-between px-6 py-0 mx-auto text-white">
         {/* Logo and Brand */}
-        <Link href="/" className="flex items-center gap-4">
+        <Link href="/" className="flex items-center gap-1">
           <Image
             src="/assets/logo.png"
             alt="Eden Isles Escape logo"
@@ -20,9 +20,19 @@ export default function Navbar() {
             height={130}
             className="rounded-full"
           />
-          <span className="text-2xl font-bold md:text-3xl">
-            Eden Isles Escapes
-          </span>
+
+          {/* Desktop / Large screen view */}
+          <div className="flex-col hidden sm:flex">
+            <span className="text-2xl font-bold md:text-3xl">
+              Eden Isles Escapes
+            </span>
+          </div>
+
+          {/* Mobile view */}
+          <div className="flex flex-col sm:hidden">
+            <span className="text-xl font-bold">Eden</span>
+            <span className="text-xl font-bold">Isles Escapes</span>
+          </div>
         </Link>
 
         {/* Hamburger Icon (Mobile) */}
