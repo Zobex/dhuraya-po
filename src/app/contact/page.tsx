@@ -15,7 +15,7 @@ export default function ContactPage() {
   };
 
   const handleWhatsApp = () => {
-    const phone = "9609778879"; // Maldives number without +
+    const phone = "9607776108"; // Maldives number without +
     const text = `Hi, I'm ${formData.name}. ${formData.message}`;
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(
       text
