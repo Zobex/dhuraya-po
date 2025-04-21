@@ -5,7 +5,7 @@ import React, { useState } from "react";
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
-    message: "Hi, I would like to know more about the tours.", // Default message
+    message: "I would like to know more about the tours.", // Default message
   });
 
   const handleChange = (
