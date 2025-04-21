@@ -4,10 +4,10 @@ const HomeHero: React.FC = () => {
   return (
     <section
       className="relative w-full h-screen bg-center bg-no-repeat bg-cover"
-      style={{ backgroundImage: "url('/assets/8.jpg')" }} // replace with your image path
+      style={{ backgroundImage: "url('/assets/milaidhoo.jpg')" }} // replace with your image path
     >
       {/* Overlay */}
-      <div className="absolute inset-0 bg-black opacity-40"></div>
+      <div className="absolute inset-0 bg-black opacity-30"></div>
 
       {/* Content */}
       <div className="relative z-10 flex items-center justify-center w-full h-full px-4 text-center text-white sm:px-8 md:px-16">

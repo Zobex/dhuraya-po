@@ -16,7 +16,6 @@ export default function Home() {
       <HeroSection />
       <Features />
       {/* <LatestProjects /> */}
-      {/* <About /> */}
       {/* <Testimonials /> */}
     </>
   );

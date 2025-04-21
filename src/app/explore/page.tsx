@@ -9,35 +9,35 @@ const destinations = [
   {
     id: 1,
     name: "Santorini, Greece",
-    image: "/assets/1.jpg",
+    image: "/assets/beach.jpg",
     description:
       "Enjoy stunning sunsets, white-washed buildings, and deep blue waters in one of Greece’s most iconic islands.",
   },
   {
     id: 2,
     name: "Kyoto, Japan",
-    image: "/assets/2.jpg",
+    image: "/assets/sea.jpg",
     description:
       "Step into history with Kyoto's temples, cherry blossoms, and tranquil bamboo forests.",
   },
   {
     id: 3,
     name: "Banff, Canada",
-    image: "/assets/2.jpg",
+    image: "/assets/milaidhoo.jpg",
     description:
       "Breathtaking turquoise lakes, mountain hikes, and cozy lodges in the Canadian Rockies.",
   },
   {
     id: 4,
     name: "Marrakech, Morocco",
-    image: "/assets/4.jpg",
+    image: "/assets/sea.jpg",
     description:
       "Experience vibrant souks, spicy cuisine, and colorful riads in the heart of Morocco.",
   },
   {
     id: 5,
     name: "Marrakech, Morocco",
-    image: "/assets/4.jpg",
+    image: "/assets/sea.jpg",
     description:
       "Experience vibrant souks, spicy cuisine, and colorful riads in the heart of Morocco.",
   },

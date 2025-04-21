@@ -66,14 +66,14 @@ const Features = () => {
       {/* Left side Image Panel */}
       <div
         className="w-full bg-center bg-cover lg:w-2/5 bg-tour-image"
-        style={{ backgroundImage: "url('/assets/3.jpg')" }}
+        style={{ backgroundImage: "url('/assets/sea.jpg')" }}
       />
 
       {/* Right Side Content */}
       <div className="flex flex-col justify-between w-full lg:w-3/5">
         <div className="p-10 space-y-8 md:p-16">
           <h2 className="text-3xl font-bold text-orange-700 md:text-4xl">
-            Why Travel With Rayya Tours?
+            Why Travel With Eden Isles Escapes?
           </h2>
           <p className="leading-relaxed text-gray-700">
             With a passion for adventure and a love for discovery, we curate
