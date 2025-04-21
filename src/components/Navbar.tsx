@@ -30,6 +30,11 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
+            <Link href="/explore" className="hover:text-orange-100">
+              Packages
+            </Link>
+          </li>
+          <li>
             <Link href="/contact" className="hover:text-orange-100">
               Contact
             </Link>
