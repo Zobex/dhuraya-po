@@ -19,8 +19,8 @@ export default function Navbar() {
             width={52}
             height={52}
           />
-          <span className="text-lg font-extrabold tracking-wide text-white drop-shadow-md">
-            ދުރަޔަ
+          <span className="text-lg font-extrabold tracking-wide text-white font-dhivehi drop-shadow-md">
+            ayarud
           </span>
         </Link>
 
