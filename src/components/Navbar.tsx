@@ -16,9 +16,8 @@ export default function Navbar() {
           <Image
             src="/assets/logo.png"
             alt="Lacture logo"
-            width={42}
-            height={42}
-            className="border rounded-full shadow-sm border-white/30"
+            width={52}
+            height={52}
           />
           <span className="text-lg font-extrabold tracking-wide text-white drop-shadow-md">
             ދުރަޔަ

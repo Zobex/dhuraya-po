@@ -2,11 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
-    './pages/**/*.{ts,tsx}',
-    './components/**/*.{ts,tsx}',
-    './app/**/*.{ts,tsx}',
-    './src/**/*.{ts,tsx}',
-	],
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   theme: {
     container: {
       center: true,
@@ -17,9 +17,9 @@ module.exports = {
     },
     extend: {
       backgroundImage: {
-        'hero-image': "url('/assets/bg-hero.jpg')",
-        'detail-image': "url('/assets/bg-detail.jpg')",
-        'ceo-bg': "url('/assets/bg-ceo.jpg')",
+        "hero-image": "url('/assets/bg-hero.jpg')",
+        "detail-image": "url('/assets/bg-detail.jpg')",
+        "ceo-bg": "url('/assets/bg-ceo.jpg')",
       },
       colors: {
         border: "hsl(var(--border))",
@@ -75,7 +75,10 @@ module.exports = {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
       },
+      fontFamily: {
+        dhivehi: ["Samee"],
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};
