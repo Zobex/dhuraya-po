@@ -6,47 +6,58 @@ import {
   FaGlobe,
 } from "react-icons/fa";
 
+const features = [
+  { icon: <FaBookOpen />, label: "ލިޔުން ބޮޑު ބަދަލު" },
+  { icon: <FaPenNib />, label: "ވަށްޓަފާޅި ލިޔުން" },
+  { icon: <FaChalkboardTeacher />, label: "މަސައްކަތް" },
+  { icon: <FaGlobe />, label: "އާއްމު ރަށުގެ ރަނގަޅު" },
+];
+
 const HeroSection = () => {
   return (
-    <section className="w-full px-6 py-20 bg-gradient-to-t from-purple-300 via-background to-purple-200">
-      <div className="grid items-center grid-cols-1 gap-12 mx-auto max-w-7xl md:grid-cols-2">
-        {/* Left Content */}
+    <section className="relative w-full overflow-hidden bg-gradient-to-br from-purple-900 to-indigo-900">
+      {/* Decorative Curved Top */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[160%] h-96 bg-gradient-to-b from-purple-300/40 to-transparent rounded-b-[100%] z-0 blur-md"></div>
 
-        {/* Right Icons Grid */}
-        <div className="grid grid-cols-2 gap-6 text-purple-700">
-          <div className="flex flex-col items-center p-6 transition-all bg-white shadow rounded-2xl hover:scale-105 hover:shadow-lg">
-            <FaBookOpen className="mb-2 text-4xl" />
-            <span className="text-sm font-semibold">
-              އުގެނުމަށް ބޭނުންކުރެވިދާނެ ލިޔުންތަށް
-            </span>
-          </div>
-          <div className="flex flex-col items-center p-6 transition-all bg-white shadow rounded-2xl hover:scale-105 hover:shadow-lg">
-            <FaPenNib className="mb-2 text-4xl" />
-            <span className="text-sm font-semibold">
-              ލިޔުމުގެ ވަށްޓަފާޅި ކުރިއެރުވުމަށް
-            </span>
-          </div>
-          <div className="flex flex-col items-center p-6 transition-all bg-white shadow rounded-2xl hover:scale-105 hover:shadow-lg">
-            <FaChalkboardTeacher className="mb-2 text-4xl" />
-            <span className="text-sm font-semibold">ކިލާސްތަށް</span>
-          </div>
-          <div className="flex flex-col items-center p-6 transition-all bg-white shadow rounded-2xl hover:scale-105 hover:shadow-lg">
-            <FaGlobe className="mb-2 text-4xl" />
-            <span className="text-sm font-semibold">އާއްމު</span>
-          </div>
+      {/* Responsive Leaf Decorations */}
+      <img
+        src="/assets/R.png"
+        alt="Decoration"
+        className="absolute top-0 left-0 z-0 w-32 h-32 -rotate-90 opacity-100 pointer-events-none sm:w-40 sm:h-40 md:w-60 md:h-60"
+      />
+      <img
+        src="/assets/R.png"
+        alt="Decoration"
+        className="absolute top-0 right-0 z-0 w-32 h-32 opacity-100 pointer-events-none sm:w-40 sm:h-40 md:w-60 md:h-60"
+      />
+
+      <div className="relative z-10 flex flex-col items-center max-w-6xl px-4 py-20 mx-auto space-y-10 text-center sm:px-6 md:py-24">
+        <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl drop-shadow-xl">
+          !ދިވެހި ކިޔާލުމުގެ މާލައިގެ އެހިމެން މިހާރު
+        </h1>
+        <p className="max-w-2xl mx-auto text-base text-purple-200 sm:text-lg md:text-xl">
+          ލިޔެކިޔަށް ބެހެއްޓިގެން، ފިތްތަކާ ހައްލުވާ އާއްމުގައި ބައްލަވާލެވިފަ!
+        </p>
+
+        <div className="grid w-full grid-cols-1 gap-6 px-2 sm:grid-cols-2 md:grid-cols-4">
+          {features.map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center p-4 transition duration-300 bg-white shadow-lg sm:p-5 rounded-2xl hover:shadow-xl hover:scale-105"
+            >
+              <div className="mb-3 text-3xl text-purple-600 transition-transform sm:text-4xl group-hover:rotate-6">
+                {item.icon}
+              </div>
+              <span className="text-sm font-semibold text-center text-gray-700">
+                {item.label}
+              </span>
+            </div>
+          ))}
         </div>
-        <div className="space-y-6 text-center md:text-right">
-          <h1 className="text-base font-extrabold leading-tight text-purple-800 md:text-2xl">
-            ކިލާސްތަކުގައި ބައިވެރިވުމަށާއި އެހެނިހެން ދިވެހި އާޓިކަލްތަށް
-            ބައްލަވާ ލެއްވުމަށް
-          </h1>
-          <p className="text-lg text-purple-700 md:text-xl">
-            !ތިރީގައިވާ ފިތް ހިޔާރު ކުރައްވާ
-          </p>
-          <button className="px-6 py-3 mt-4 text-white transition duration-200 bg-purple-600 rounded-lg shadow hover:bg-purple-700">
-            އިތުތަށް ބެއްލެވުމަށް
-          </button>
-        </div>
+
+        <button className="px-6 py-2 font-semibold text-white transition duration-200 shadow-lg sm:px-8 sm:py-3 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-xl hover:from-purple-700 hover:to-indigo-700">
+          އިތުތަށް ބެއްލެވުމަށް
+        </button>
       </div>
     </section>
   );
