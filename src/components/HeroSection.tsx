@@ -7,10 +7,10 @@ import {
 } from "react-icons/fa";
 
 const features = [
-  { icon: <FaBookOpen />, label: "ލިޔުން ބޮޑު ބަދަލު" },
-  { icon: <FaPenNib />, label: "ވަށްޓަފާޅި ލިޔުން" },
-  { icon: <FaChalkboardTeacher />, label: "މަސައްކަތް" },
-  { icon: <FaGlobe />, label: "އާއްމު ރަށުގެ ރަނގަޅު" },
+  { icon: <FaBookOpen />, label: "ލިޔުންތަށް" },
+  { icon: <FaPenNib />, label: "މުޠޯލިޢާ ކުރުމަށް " },
+  { icon: <FaChalkboardTeacher />, label: "ކިލާސްތަށް" },
+  { icon: <FaGlobe />, label: "ޕަބްލިކޭޝަންސް" },
 ];
 
 const HeroSection = () => {
@@ -32,11 +32,11 @@ const HeroSection = () => {
       />
 
       <div className="relative z-10 flex flex-col items-center max-w-6xl px-4 py-20 mx-auto space-y-10 text-center sm:px-6 md:py-24">
-        <h1 className="text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl drop-shadow-xl">
-          !ދިވެހި ކިޔާލުމުގެ މާލައިގެ އެހިމެން މިހާރު
+        <h1 className="text-3xl leading-tight tracking-tight text-white font-utheemu sm:text-5xl drop-shadow-xl">
+          ދިވެހި ލިޔުންތަށް ބެއްލެވުމަށާއި އިތުރުމަޢުލޫމާތު ހޯދާލުމަށް
         </h1>
-        <p className="max-w-2xl mx-auto text-base text-purple-200 sm:text-lg md:text-xl">
-          ލިޔެކިޔަށް ބެހެއްޓިގެން، ފިތްތަކާ ހައްލުވާ އާއްމުގައި ބައްލަވާލެވިފަ!
+        <p className="max-w-2xl mx-auto text-base text-purple-200 font-utheemu sm:text-lg md:text-xl">
+          !ތިރީގައިވާ ފިތްތަށް ހިޔާރު ކުރަށްވާ
         </p>
 
         <div className="grid w-full grid-cols-1 gap-6 px-2 sm:grid-cols-2 md:grid-cols-4">

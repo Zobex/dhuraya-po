@@ -19,7 +19,7 @@ export default function Navbar() {
             width={52}
             height={52}
           />
-          <span className="text-lg font-extrabold tracking-wide text-white font-dhivehi drop-shadow-md">
+          <span className="text-lg font-extrabold tracking-wide text-white font-samee drop-shadow-md">
             ayarud
           </span>
         </Link>
@@ -28,22 +28,22 @@ export default function Navbar() {
         <ul className="hidden gap-6 text-sm font-medium text-white md:flex">
           <li>
             <Link href="/" className="transition hover:text-purple-300">
-              Home
+              ފުރަތަމަ ޞަފްޙާ
             </Link>
           </li>
           <li>
             <Link href="/about" className="transition hover:text-purple-300">
-              About
+              އިތުރު މަޢުލޫމާތު
             </Link>
           </li>
           <li>
             <Link href="/lectures" className="transition hover:text-purple-300">
-              Lectures
+              ފިލާވަޅުތަށް
             </Link>
           </li>
           <li>
             <Link href="/contact" className="transition hover:text-purple-300">
-              Contact
+              ވާހަކަ ދައްކާލުމަށް
             </Link>
           </li>
         </ul>
