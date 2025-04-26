@@ -164,7 +164,7 @@ export default function Navbar() {
               </Link>
             </li>
             <li className="hover:font-extrabold">
-              <Link href="/lectures" onClick={() => setIsOpen(false)}>
+              <Link href="/lesson" onClick={() => setIsOpen(false)}>
                 ފިލާވަޅުތަށް
               </Link>
             </li>
