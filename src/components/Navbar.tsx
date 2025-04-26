@@ -128,7 +128,7 @@ export default function Navbar() {
             </Link>
           </li>
           <li>
-            <Link href="/lectures" className="transition hover:text-purple-300">
+            <Link href="/lesson" className="transition hover:text-purple-300">
               ފިލާވަޅުތަށް
             </Link>
           </li>
