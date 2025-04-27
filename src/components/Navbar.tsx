@@ -62,37 +62,39 @@ export default function Navbar() {
             <NavLink href="/">ފުރަތަމަ ޞަފްޙާ</NavLink>
           </li>
           <li>
-            <NavLink href="/about">އިތުރު މަޢުލޫމާތު</NavLink>
+            <NavLink href="/contact">އިތުރު މަޢުލޫމާތު</NavLink>
           </li>
           <li>
-            <NavLink href="/lesson">އެހެނިހެން</NavLink>
+            <NavLink href="/ehenihen">އެހެނިހެން</NavLink>
           </li>
           <li>
-            <NavLink href="/contact">ފިއްތާލައިގެން ލިބޭ</NavLink>
+            <NavLink href="/ithuru-masahkai">ފިއްތާލައިގެން ލިބޭ</NavLink>
           </li>
           <li>
             <NavLink href="/biography">ބައޮގްރަފީ</NavLink>
           </li>
           <li>
-            <NavLink href="/students-work">ދަރިވަރުންގެ މަސައްކަތް</NavLink>
+            <NavLink href="/dharivarunge-masahkai">
+              ދަރިވަރުންގެ މަސައްކަތް
+            </NavLink>
           </li>
           <li>
-            <NavLink href="/readings">ދޭހަ</NavLink>
+            <NavLink href="/dheyha">ދޭހަ</NavLink>
           </li>
           <li>
-            <NavLink href="/comedy">ސަމާސާއަދަބު</NavLink>
+            <NavLink href="/samaasa-adhabu">ސަމާސާއަދަބު</NavLink>
           </li>
           <li>
             <NavLink href="/drama">ޑުރާމާ</NavLink>
           </li>
           <li>
-            <NavLink href="/travel">ދަތުރުނާމަ</NavLink>
+            <NavLink href="/dhathuru-naama">ދަތުރުނާމަ</NavLink>
           </li>
           <li>
-            <NavLink href="/stories">ވާހަކަ</NavLink>
+            <NavLink href="/vaahaka">ވާހަކަ</NavLink>
           </li>
           <li>
-            <NavLink href="/poetry">ޅެން</NavLink>
+            <NavLink href="/lhen">ޅެން</NavLink>
           </li>
           <li>
             <NavLink href="/mazumoonu">މަޒުމޫނު</NavLink>
@@ -120,37 +122,40 @@ export default function Navbar() {
               <NavLink href="/">ފުރަތަމަ ޞަފްޙާ</NavLink>
             </li>
             <li>
-              <NavLink href="/about">އިތުރު މަޢުލޫމާތު</NavLink>
+              <NavLink href="/contact">އިތުރު މަޢުލޫމާތު</NavLink>
+            </li>
+
+            <li>
+              <NavLink href="/ehenihen">އެހެނިހެން</NavLink>
             </li>
             <li>
-              <NavLink href="/lesson">ފިލާވަޅުތަށް</NavLink>
-            </li>
-            <li>
-              <NavLink href="/contact">ވާހަކަ ދައްކާލުމަށް</NavLink>
+              <NavLink href="/ithuru-masahkai">ފިއްތާލައިގެން ލިބޭ</NavLink>
             </li>
             <li>
               <NavLink href="/biography">ބައޮގްރަފީ</NavLink>
             </li>
             <li>
-              <NavLink href="/students-work">ދަރިވަރުންގެ މަސައްކަތް</NavLink>
+              <NavLink href="/dharivraunge-masahkai">
+                ދަރިވަރުންގެ މަސައްކަތް
+              </NavLink>
             </li>
             <li>
-              <NavLink href="/readings">ދޭހަ</NavLink>
+              <NavLink href="/dheyha">ދޭހަ</NavLink>
             </li>
             <li>
-              <NavLink href="/comedy">ސަމާސާއަދަބު</NavLink>
+              <NavLink href="/samaasa-adhabu">ސަމާސާއަދަބު</NavLink>
             </li>
             <li>
               <NavLink href="/drama">ޑުރާމާ</NavLink>
             </li>
             <li>
-              <NavLink href="/travel">ދަތުރުނާމަ</NavLink>
+              <NavLink href="/dhathuru-naame">ދަތުރުނާމަ</NavLink>
             </li>
             <li>
-              <NavLink href="/stories">ވާހަކަ</NavLink>
+              <NavLink href="/vaahaka">ވާހަކަ</NavLink>
             </li>
             <li>
-              <NavLink href="/poetry">ޅެން</NavLink>
+              <NavLink href="/lhen">ޅެން</NavLink>
             </li>
             <li>
               <NavLink href="/mazumoonu">މަޒުމޫނު</NavLink>
