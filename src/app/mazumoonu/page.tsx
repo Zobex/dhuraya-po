@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
@@ -213,7 +214,7 @@ const UploadList = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-24 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="relative min-h-screen pt-24 bg-gradient-to-b from-purple-300 to-purple-50">
       <img
         src="/assets/R.png"
         alt=""
@@ -301,7 +302,7 @@ const UploadList = () => {
 
         {/* Search Bar */}
         <div className="relative mb-6">
-          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
+          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-full shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
             <Search className="w-5 h-5 text-gray-400" />
             <input
               type="text"

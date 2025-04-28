@@ -13,6 +13,9 @@ import {
   BookOpenCheck,
   Sparkle,
   Users,
+  Languages,
+  PenTool,
+  PenSquareIcon,
 } from "lucide-react";
 
 type UploadItem = {
@@ -22,12 +25,7 @@ type UploadItem = {
   href: string;
   type?: string;
   size?: string;
-  category?:
-    | "ދެކޭގޮތްހާމަކުރާ"
-    | "އޮޅުންފިލުވައިދޭ"
-    | "ޙިޔާލީ"
-    | "ބަޙުސްކުރާ"
-    | "ވާހަކަ";
+  category?: "މާނަކުރުން" | "ޝަރަޙަކުރުން" | "ފާޑުކިެުން";
 };
 
 const uploads: UploadItem[] = [
@@ -38,7 +36,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/document.pdf",
     type: "PDF",
     size: "2.4 MB",
-    category: "ދެކޭގޮތްހާމަކުރާ",
+    category: "މާނަކުރުން",
   },
   {
     id: "2",
@@ -47,7 +45,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/notes.docx",
     type: "DOCX",
     size: "534 KB",
-    category: "އޮޅުންފިލުވައިދޭ",
+    category: "ޝަރަޙަކުރުން",
   },
   {
     id: "3",
@@ -56,7 +54,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/photo.png",
     type: "PNG",
     size: "1.2 MB",
-    category: "ޙިޔާލީ",
+    category: "ފާޑުކިެުން",
   },
   {
     id: "4",
@@ -65,7 +63,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/report.xlsx",
     type: "XLSX",
     size: "876 KB",
-    category: "ބަޙުސްކުރާ",
+    category: "ފާޑުކިެުން",
   },
   {
     id: "5",
@@ -74,7 +72,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/resources.zip",
     type: "ZIP",
     size: "4.7 MB",
-    category: "ވާހަކަ",
+    category: "ފާޑުކިެުން",
   },
   {
     id: "6",
@@ -83,31 +81,26 @@ const uploads: UploadItem[] = [
     href: "/uploads/story.pdf",
     type: "PDF",
     size: "1.5 MB",
-    category: "ވާހަކަ",
+    category: "ފާޑުކިެުން",
   },
 ];
 
 const getFileIcon = (fileName: string, category?: string) => {
-  if (category === "އޮޅުންފިލުވައިދޭ") {
-    return <BookOpen className="text-purple-600" size={20} />;
+  if (category === "މާނަކުރުން") {
+    return <Languages className="text-pink-900" size={20} />;
   }
-  if (category === "ޙިޔާލީ") {
-    return <BookOpen className="text-blue-600" size={20} />;
+  if (category === "ޝަރަޙަކުރުން") {
+    return <PenSquareIcon className="text-blue-600" size={20} />;
   }
-  if (category === "ބަޙުސްކުރާ") {
-    return <BookOpen className="text-green-600" size={20} />;
-  }
-  if (category === "ވާހަކަ") {
-    return <BookOpen className="text-pink-600" size={20} />;
-  }
-  if (category === "ދެކޭގޮތްހާމަކުރާ") {
-    return <BookOpen className="text-pink-900" size={20} />;
+  if (category === "ފާޑުކިެުން") {
+    return <PenTool className="text-purple-600" size={20} />;
   }
 
   if (fileName.match(/\.(pdf|docx?|txt)$/i)) {
     return <FileText className="text-indigo-600" size={20} />;
   }
   if (fileName.match(/\.(png|jpe?g)$/i)) {
+    // eslint-disable-next-line jsx-a11y/alt-text
     return <Image className="text-emerald-600" size={20} />;
   }
   if (fileName.match(/\.(zip|rar)$/i)) {
@@ -139,16 +132,13 @@ const getFileTypeColor = (type?: string) => {
 
 const getCategoryColor = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
-      return "bg-purple-600";
-    case "ޙިޔާލީ":
-      return "bg-blue-600";
-    case "ބަޙުސްކުރާ":
-      return "bg-green-600";
-    case "ވާހަކަ":
-      return "bg-pink-600";
-    case "ދެކޭގޮތްހާމަކުރާ":
+    case "މާނަކުރުން":
       return "bg-pink-900";
+    case "ޝަރަޙަކުރުން":
+      return "bg-blue-600";
+    case "ފާޑުކިެުން":
+      return "bg-purple-600";
+
     default:
       return "bg-gray-600";
   }
@@ -156,16 +146,12 @@ const getCategoryColor = (category?: string) => {
 
 const getCategoryIcon = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
-      return <BookOpenCheck size={16} />;
-    case "ޙިޔާލީ":
-      return <Sparkle size={16} />;
-    case "ބަޙުސްކުރާ":
-      return <Users size={16} />;
-    case "ވާހަކަ":
-      return <BookOpen size={16} />;
-    case "ދެކޭގޮތްހާމަކުރާ":
-      return <Lightbulb size={16} />;
+    case "މާނަކުރުން":
+      return <Languages size={16} />;
+    case "ޝަރަޙަކުރުން":
+      return <PenSquareIcon size={16} />;
+    case "ފާޑުކިެުން":
+      return <PenTool size={16} />;
     default:
       return <FileText size={16} />;
   }
@@ -213,7 +199,7 @@ const LhenPage = () => {
   };
 
   return (
-    <div className="relative min-h-screen pt-24 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="relative min-h-screen pt-24 bg-gradient-to-b from-purple-300 to-purple-50">
       <img
         src="/assets/R.png"
         alt=""
@@ -223,7 +209,7 @@ const LhenPage = () => {
       <div className="relative z-10 max-w-4xl px-4 pt-8 pb-16 mx-auto sm:px-6 lg:px-8">
         <div className="mb-6 text-center">
           <h1 className="text-3xl font-bold tracking-tight text-purple-800 font-utheemu sm:text-4xl">
-            މަޒުމޫނާ ގުޅުންހުރި ފޮށި
+            ޅެމާއި ގުޅުންހުރި ފޮށި
           </h1>
           <p className="mt-2 text-lg text-gray-600 font-utheemu">
             ! ބޭނުންފުޅުވާ ފިލާވަޅެއް ހޯދާލެއްވުމަށްފަހު ޑައުންލޯޑު ކުރަށްވާ
@@ -233,59 +219,37 @@ const LhenPage = () => {
         {/* Category Buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">
           <button
-            onClick={() => handleCategoryFilter("ދެކޭގޮތްހާމަކުރާ")}
+            onClick={() => handleCategoryFilter("މާނަކުރުން")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ދެކޭގޮތްހާމަކުރާ"
+              activeCategory === "މާނަކުރުން"
                 ? "bg-pink-900"
                 : "bg-pink-700 hover:bg-pink-900"
             }`}
           >
-            <Lightbulb size={16} />
-            <span>ދެކޭގޮތްހާމަކުރާ</span>
+            <Languages size={16} />
+            <span>މާނަކުރުން</span>
           </button>
           <button
-            onClick={() => handleCategoryFilter("އޮޅުންފިލުވައިދޭ")}
+            onClick={() => handleCategoryFilter("ފާޑުކިެުން")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "އޮޅުންފިލުވައިދޭ"
+              activeCategory === "ފާޑުކިެުން"
                 ? "bg-purple-700"
                 : "bg-purple-600 hover:bg-purple-700"
             }`}
           >
-            <BookOpenCheck size={16} />
-            <span>އޮޅުންފިލުވައިދޭ</span>
+            <PenTool size={16} />
+            <span>ފާޑުކިއުން</span>
           </button>
           <button
-            onClick={() => handleCategoryFilter("ޙިޔާލީ")}
+            onClick={() => handleCategoryFilter("ޝަރަޙަކުރުން")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ޙިޔާލީ"
+              activeCategory === "ޝަރަޙަކުރުން"
                 ? "bg-blue-700"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}
           >
-            <Sparkle size={16} />
-            <span>ޙިޔާލީ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("ބަޙުސްކުރާ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ބަޙުސްކުރާ"
-                ? "bg-green-700"
-                : "bg-green-600 hover:bg-green-700"
-            }`}
-          >
-            <Users size={16} />
-            <span>ބަޙުސްކުރާ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("ވާހަކަ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ވާހަކަ"
-                ? "bg-pink-700"
-                : "bg-pink-600 hover:bg-pink-700"
-            }`}
-          >
-            <BookOpen size={16} />
-            <span>ވާހަކަ</span>
+            <PenSquareIcon size={16} />
+            <span>ޝަރަޙަކުރުން</span>
           </button>
 
           {activeCategory && (
@@ -301,7 +265,7 @@ const LhenPage = () => {
 
         {/* Search Bar */}
         <div className="relative mb-6">
-          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
+          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-full shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
             <Search className="w-5 h-5 text-gray-400" />
             <input
               type="text"

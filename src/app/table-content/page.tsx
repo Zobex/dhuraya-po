@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 // "use client";
 // import React, { useState } from "react";
@@ -375,7 +376,7 @@ const UploadList = () => {
 
         {/* Search bar */}
         <div className="relative mb-6">
-          <div className="flex flex-row-reverse items-center gap-2 px-3 py-2 bg-white border rounded-lg shadow-sm">
+          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-full shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
             <Search className="w-5 h-5 text-gray-400 shrink-0" />
             <input
               type="text"
@@ -404,7 +405,7 @@ const UploadList = () => {
                     href={item.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 sm:flex-row-reverse"
+                    className="flex flex-col gap-3 p-4 sm:flex-row sm:items-center sm:justify-between sm:px-6 lg:flex-row-reverse"
                   >
                     {/* File Info */}
                     <div className="flex items-center gap-4 sm:flex-row-reverse">

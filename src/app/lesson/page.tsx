@@ -58,7 +58,6 @@ export default function Lesson() {
   // Function to generate preview URL for Google Drive
   const getPreviewUrl = (driveLink: string): string => {
     const fileId = getFileId(driveLink);
-    // This URL format will show Google's viewer interface which handles access requests
     return `https://drive.google.com/file/d/${fileId}/preview`;
   };
 
@@ -76,7 +75,7 @@ export default function Lesson() {
               setSelectedLesson(lesson);
               setViewMode("content");
             }}
-            className="p-4 px-2 text-right transition-shadow transition-transform duration-300 ease-in-out bg-white shadow cursor-pointer rounded-xl hover:shadow-lg hover:scale-102"
+            className="p-4 px-2 text-right transition-shadow duration-300 ease-in-out bg-white shadow cursor-pointer rounded-xl hover:shadow-lg hover:scale-102"
           >
             <div className="relative">
               {lesson.image && (
