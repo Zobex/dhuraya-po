@@ -88,4 +88,10 @@
   .rtl-punct {
     unicode-bidi: plaintext;
   }
+
+  button,
+  a,
+  [role="button"] {
+    -webkit-tap-highlight-color: transparent;
+  }
 }
