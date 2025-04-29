@@ -1,426 +1,453 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 import React, { useState } from "react";
 import {
-  Download,
-  Search,
   X,
   FileText,
-  Image,
-  FileArchive,
   BookOpen,
-  Lightbulb,
-  BookOpenCheck,
-  Sparkle,
-  Users,
+  Download,
+  Search,
+  ChevronLeft,
+  ChevronRight,
 } from "lucide-react";
 
-type UploadItem = {
-  id: string;
-  name: string;
-  uploadedAt: Date;
-  href: string;
-  type?: string;
-  size?: string;
-  category?:
-    | "ދެކޭގޮތްހާމަކުރާ"
-    | "އޮޅުންފިލުވައިދޭ"
-    | "ޙިޔާލީ"
-    | "ބަޙުސްކުރާ"
-    | "ވާހަކަ";
-};
+interface Lesson {
+  id: number;
+  title: string;
+  summary: string;
+  content: string;
+  image: string;
+  driveLink: string;
+  category?: "އެހެނިހެން" | "(22-21) 8" | "(22-21) 9";
+  justify?: boolean;
+}
 
-const uploads: UploadItem[] = [
+const lessons: Lesson[] = [
   {
-    id: "1",
-    name: "Product_Requirements_Document.pdf",
-    uploadedAt: new Date("2025-04-25"),
-    href: "/uploads/document.pdf",
-    type: "PDF",
-    size: "2.4 MB",
-    category: "ދެކޭގޮތްހާމަކުރާ",
+    id: 1,
+    title: "ބަހުސް9މަށް ލިޔެވިދާނެ ގޮތުގެ ނަމޫނާއެއް",
+    summary:
+      " (ދަރިވަރުންނަށާއި މުދައްރިސުންނަށް) .!ބަހުސްކުރާ މަޒުމޫނު ލިޔާނެ ގޮތުގެ ނަމޫނާއެއް. އެންމެ 9ކޮއް ",
+    content: ` ވަޒީފާއަދާ9މަކީ ވެސް ހަމައެކަނި ފިރިހެނުންނަށް އޮތް އިޚުތިޔާރެއްކަމަށް ވަކާލާތުކުރާ މަދު ބަޔަކު ނަމަވެސް މުޖުތަމަޢުގައި އުޅެއެވެ. އެ ފަދަ މީހުންގެ ވިސްނުމުގައި އަންހެނުން ގެއިން ބޭރަށް ގޮސް ވަޒީފާއަދާ9މަކީ ވަރަށް ގިނަ މައްސަލަތައް އުފަން9ވާ ކަމެކެވެ. އެހެނަސް ރާއްޖޭގެ އަނެއް ބަޔަކުގެ ނަޒަރުގައި އަންހެނުން ގެއިން ބޭރަށް ގޮސް ވަޒީފާއަދާ ނު9މަކީ އޮތް އިޚުތިޔާރެއް ވެސް ނޫނެވެ. އެހެނީ ވަޒީފާ އަދާ9މުން ގިނަ ފައިދާތަކަކާއި މަންފާތަކެއް
+   . ލިއްބައިދެއެވެ
+      . ތިޔަ ދަރިވަރަކީ އަންހެނުން ގޭގައި ނުތިބެ ވަޒީފާއަށް ދިޔުމަށް ހަރުއަޑުން  ވަކާލާތުކުރާ މީހެއްކަމަށް ބަލާށެވެ
+     އެހެންކަމުން، ތިޔަ ދަރިވަރު ގަބޫލުކުރާ ކޮޅަށް ބަހުސްކޮށް، ފުރާވަރުގެ އަންހެން ކުދީންނަށް އަމާޒުކޮށް 
+     .ނެރޭ "ފަތްމިނި" މަޖައްލާއަށް ބަހުސްކުރާ ލިޔުމެއް ނުވަތަ މަޒުމޫނެއް ލިޔެދޭށެވެ`,
+    image: "/assets/bahus.png",
+    driveLink:
+      "https://drive.google.com/file/d/19J7oYaSCNkKUVeIdRhSYPHjOFB-nVRo4/view",
+    category: "އެހެނިހެން",
   },
   {
-    id: "2",
-    name: "Team_Meeting_Notes.docx",
-    uploadedAt: new Date("2025-04-24"),
-    href: "/uploads/notes.docx",
-    type: "DOCX",
-    size: "534 KB",
-    category: "އޮޅުންފިލުވައިދޭ",
+    id: 2,
+    title: "9 ލިޔުން",
+    summary: `ސިހުރާއި ފަންޑިތައިގެ "ބަލި" އަދިވެސް ދިވެހިންގެ ތެރޭގައި!  ވޯޑުފައިލްގައި ކުރެވިދާނެ ދޭހައިގެ މަސައްކަތެއްއޮންލައިންކޮށް ކުރެވިދާނެ ދޭހައިގެ މަސައްކަތެއް`,
+    content: `
+      މިއީ ވޯޑުފައިލްގައި ޖަވާބުދެވޭ ގޮތަށް ތައްޔާރުކޮށްފައިވާ ދޭހައިގެ މަސައްކަތެކެވެ. މައިކްރޯ ސޮފްޓް އޮފީސްގެ ބައެއް ވާރޝަންތަކުގައި ބައެއްފަހަރު ސުވާލުތަކުގެ އިޚުތިޔާރީ ޖަވާބުތައް ؟؟؟؟؟ މި ގޮތަށް ފެނިދާނެއެވެ. އެ ހާލަތުގައި "ޑިވެލޮޕަރޓެބް" އެޑްކޮށް "ޑިޒައިން މޯޑު"އަށް ކުލިކްކޮށްލުމުން
+      . އަންނަ ވިންޑޯ ލެއްޕުމުން ފޮންޓުތައް ފެންނާނެއެވެ`,
+    image: "/assets/kuruvaahaka.png",
+    driveLink:
+      "https://drive.google.com/file/d/1aSHiIxHkfc7BDaF800FC-1NTGnrHppEj/view",
+    category: "(22-21) 9",
   },
   {
-    id: "3",
-    name: "Marketing_Campaign_Image.png",
-    uploadedAt: new Date("2025-04-24"),
-    href: "/uploads/photo.png",
-    type: "PNG",
-    size: "1.2 MB",
-    category: "ޙިޔާލީ",
+    id: 3,
+    title: "8 ވާހަކަ ނަމޫނާ",
+    summary: "8 ވާހަކަ ތައްޔާރުކުރާނެ ގޮތުގެ މިސާލު",
+    content: `8 ވާހަކަ ލިޔުމުގައި ގިނަ ކަންކަމަށް ސަމާލުކަން ދޭންޖެހެއެވެ. ވާހަކައިގެ ފެށުމާއި، ކުރިއަށްދާ ގޮތާއި، ނިމުން އެކުލަވާލުމުގައި ވިސްނަންޖެހޭ ކަންތައްތައް ހުރެއެވެ. މި ޑޮކިޔުމަންޓްގައި އެ ހުރިހާ ކަމެއްގެ ނަމޫނާ ހިމަނާފައިވާނެއެވެ.`,
+    image: "/assets/dhiguvaahaka.png",
+    driveLink:
+      "https://drive.google.com/file/d/1sample_id_for_third_lesson/view",
+    category: "(22-21) 8",
   },
   {
-    id: "4",
-    name: "Quarterly_Financial_Report.xlsx",
-    uploadedAt: new Date("2025-04-23"),
-    href: "/uploads/report.xlsx",
-    type: "XLSX",
-    size: "876 KB",
-    category: "ބަޙުސްކުރާ",
-  },
-  {
-    id: "5",
-    name: "Project_Resources.zip",
-    uploadedAt: new Date("2025-04-22"),
-    href: "/uploads/resources.zip",
-    type: "ZIP",
-    size: "4.7 MB",
-    category: "ވާހަކަ",
-  },
-  {
-    id: "6",
-    name: "Story_About_Colors.pdf",
-    uploadedAt: new Date("2025-04-21"),
-    href: "/uploads/story.pdf",
-    type: "PDF",
-    size: "1.5 MB",
-    category: "ވާހަކަ",
+    id: 4,
+    title: "އެހެނިހެން ވާހަކަތައް",
+    summary: "ތަފާތު ބާވަތްތަކުގެ ވާހަކަތަކުގެ ނަމޫނާ",
+    content: `ވާހަކަ ލިޔުމުގެ ތަފާތު އުކުޅުތަކާއި ގޮތްތައް ހުރެއެވެ. މި ލިޔުމުގައި އެފަދަ ތަފާތު ބާވަތްތަކުގެ ވާހަކަތައް ލިޔުމުގެ މިސާލުތައް ދެވިފައިވާނެއެވެ. ކޮންމެ ބާވަތަކަށްވެސް ޚާއްޞަ ސިފަތަކެއް ހުރެއެވެ.`,
+    image: "/assets/ehenihenvahaka.png",
+    driveLink:
+      "https://drive.google.com/file/d/1sample_id_for_fourth_lesson/view",
+    category: "އެހެނިހެން",
   },
 ];
 
-const getFileIcon = (fileName: string, category?: string) => {
-  if (category === "އޮޅުންފިލުވައިދޭ") {
-    return <BookOpen className="text-purple-600" size={20} />;
-  }
-  if (category === "ޙިޔާލީ") {
-    return <BookOpen className="text-blue-600" size={20} />;
-  }
-  if (category === "ބަޙުސްކުރާ") {
-    return <BookOpen className="text-green-600" size={20} />;
-  }
-  if (category === "ވާހަކަ") {
-    return <BookOpen className="text-pink-600" size={20} />;
-  }
-  if (category === "ދެކޭގޮތްހާމަކުރާ") {
-    return <BookOpen className="text-pink-900" size={20} />;
-  }
-
-  if (fileName.match(/\.(pdf|docx?|txt)$/i)) {
-    return <FileText className="text-indigo-600" size={20} />;
-  }
-  if (fileName.match(/\.(png|jpe?g)$/i)) {
-    return <Image className="text-emerald-600" size={20} />;
-  }
-  if (fileName.match(/\.(zip|rar)$/i)) {
-    return <FileArchive className="text-amber-600" size={20} />;
-  }
-  return <FileText className="text-gray-600" size={20} />;
-};
-
-const getFileTypeColor = (type?: string) => {
-  switch (type?.toUpperCase()) {
-    case "PDF":
-      return "bg-red-100 text-red-700";
-    case "DOCX":
-    case "DOC":
-      return "bg-blue-100 text-blue-700";
-    case "PNG":
-    case "JPG":
-      return "bg-emerald-100 text-emerald-700";
-    case "XLSX":
-    case "XLS":
-      return "bg-green-100 text-green-700";
-    case "ZIP":
-    case "RAR":
-      return "bg-amber-100 text-amber-700";
-    default:
-      return "bg-gray-100 text-gray-700";
-  }
-};
-
 const getCategoryColor = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
-      return "bg-purple-600";
-    case "ޙިޔާލީ":
-      return "bg-blue-600";
-    case "ބަޙުސްކުރާ":
-      return "bg-green-600";
-    case "ވާހަކަ":
+    case "އެހެނިހެން":
       return "bg-pink-600";
-    case "ދެކޭގޮތްހާމަކުރާ":
-      return "bg-pink-900";
+    case "(22-21) 8":
+      return "bg-blue-600";
+    case "(22-21) 9":
+      return "bg-purple-600";
     default:
       return "bg-gray-600";
   }
 };
 
-const getCategoryIcon = (category?: string) => {
+const getCategoryTextColor = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
-      return <BookOpenCheck size={16} />;
-    case "ޙިޔާލީ":
-      return <Sparkle size={16} />;
-    case "ބަޙުސްކުރާ":
-      return <Users size={16} />;
-    case "ވާހަކަ":
-      return <BookOpen size={16} />;
-    case "ދެކޭގޮތްހާމަކުރާ":
-      return <Lightbulb size={16} />;
+    case "އެހެނިހެން":
+      return "text-pink-600";
+    case "(22-21) 8":
+      return "text-blue-600";
+    case "(22-21) 9":
+      return "text-purple-600";
     default:
-      return <FileText size={16} />;
+      return "text-gray-600";
   }
 };
 
-const UploadList = () => {
+export default function EnhancedLessonPage() {
+  const [selectedLesson, setSelectedLesson] = useState<Lesson | null>(null);
+  const [viewMode, setViewMode] = useState<"content" | "pdf">("content");
   const [searchTerm, setSearchTerm] = useState("");
-  const [filteredUploads, setFilteredUploads] = useState(uploads);
   const [activeCategory, setActiveCategory] = useState<string | null>(null);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const term = e.target.value.toLowerCase();
-    setSearchTerm(term);
-
-    filterUploads(term, activeCategory);
+  const getFileId = (driveLink: string): string => {
+    const match = driveLink.match(/\/d\/([^\/]+)/);
+    return match ? match[1] : "";
   };
 
-  const filterUploads = (term = searchTerm, category = activeCategory) => {
-    let filtered = uploads;
+  const getPreviewUrl = (driveLink: string): string => {
+    const fileId = getFileId(driveLink);
+    return `https://drive.google.com/file/d/${fileId}/preview`;
+  };
 
-    if (term) {
-      filtered = filtered.filter(
-        (item) =>
-          item.name.toLowerCase().includes(term) ||
-          item.type?.toLowerCase().includes(term)
+  const filteredLessons = lessons.filter((lesson) => {
+    const matchesSearch =
+      searchTerm === "" ||
+      lesson.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      lesson.summary.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const matchesCategory =
+      activeCategory === null || lesson.category === activeCategory;
+
+    return matchesSearch && matchesCategory;
+  });
+
+  const goToPrevious = () => {
+    if (selectedLesson) {
+      const currentId = selectedLesson.id;
+      const currentIndex = filteredLessons.findIndex(
+        (lesson) => lesson.id === currentId
       );
+      if (currentIndex > 0) {
+        setSelectedLesson(filteredLessons[currentIndex - 1]);
+      } else {
+        setSelectedLesson(filteredLessons[filteredLessons.length - 1]);
+      }
     }
-
-    if (category) {
-      filtered = filtered.filter((item) => item.category === category);
-    }
-
-    setFilteredUploads(filtered);
   };
 
-  const clearSearch = () => {
-    setSearchTerm("");
-    filterUploads("", activeCategory);
-  };
-
-  const handleCategoryFilter = (category: string) => {
-    const newCategory = activeCategory === category ? null : category;
-    setActiveCategory(newCategory);
-    filterUploads(searchTerm, newCategory);
+  const goToNext = () => {
+    if (selectedLesson) {
+      const currentId = selectedLesson.id;
+      const currentIndex = filteredLessons.findIndex(
+        (lesson) => lesson.id === currentId
+      );
+      if (currentIndex < filteredLessons.length - 1) {
+        setSelectedLesson(filteredLessons[currentIndex + 1]);
+      } else {
+        setSelectedLesson(filteredLessons[0]);
+      }
+    }
   };
 
   return (
-    <div className="relative min-h-screen pt-24 bg-gradient-to-br from-blue-50 to-purple-50">
+    <div className="relative min-h-screen pt-24 bg-gradient-to-b from-purple-300 to-purple-50">
       <img
         src="/assets/R.png"
         alt=""
         className="absolute top-0 right-0 w-40 h-40 opacity-100 blur-md pointer-events-none md:w-[800px] md:h-[800px]"
       />
-
-      <div className="relative z-10 max-w-4xl px-4 pt-8 pb-16 mx-auto sm:px-6 lg:px-8">
-        <div className="mb-6 text-center">
-          <h1 className="text-3xl font-bold tracking-tight text-purple-800 font-utheemu sm:text-4xl">
-            މަޒުމޫނާ ގުޅުންހުރި ފޮށި
+      <div className="container relative z-10 px-4 py-12 mx-auto max-w-7xl">
+        <div className="mb-6 text-center ">
+          <h1 className="mb-3 text-4xl font-bold text-purple-800 font-utheemu">
+            ދޭހަޔާއި ގުޅުންހުރި ފިލާވަޅުތައް
           </h1>
-          <p className="mt-2 text-lg text-gray-600 font-utheemu">
-            ! ބޭނުންފުޅުވާ ފިލާވަޅެއް ހޯދާލެއްވުމަށްފަހު ޑައުންލޯޑު ކުރަށްވާ
+          <p className="text-lg text-gray-600 font-utheemu">
+            ބޭނުންފުޅުވާ ފިލާވަޅެއް ހޯދާލުމަށްފަހު ބައްލަވާ ނުވަތަ ޑައުންލޯޑު
+            ކުރައްވާ
           </p>
         </div>
 
-        {/* Category Buttons */}
-        <div className="flex flex-wrap justify-center gap-2 mb-6">
-          <button
-            onClick={() => handleCategoryFilter("ދެކޭގޮތްހާމަކުރާ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ދެކޭގޮތްހާމަކުރާ"
-                ? "bg-pink-900"
-                : "bg-pink-700 hover:bg-pink-900"
-            }`}
-          >
-            <Lightbulb size={16} />
-            <span>ދެކޭގޮތްހާމަކުރާ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("އޮޅުންފިލުވައިދޭ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "އޮޅުންފިލުވައިދޭ"
-                ? "bg-purple-700"
-                : "bg-purple-600 hover:bg-purple-700"
-            }`}
-          >
-            <BookOpenCheck size={16} />
-            <span>އޮޅުންފިލުވައިދޭ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("ޙިޔާލީ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ޙިޔާލީ"
-                ? "bg-blue-700"
-                : "bg-blue-600 hover:bg-blue-700"
-            }`}
-          >
-            <Sparkle size={16} />
-            <span>ޙިޔާލީ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("ބަޙުސްކުރާ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ބަޙުސްކުރާ"
-                ? "bg-green-700"
-                : "bg-green-600 hover:bg-green-700"
-            }`}
-          >
-            <Users size={16} />
-            <span>ބަޙުސްކުރާ</span>
-          </button>
-          <button
-            onClick={() => handleCategoryFilter("ވާހަކަ")}
-            className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ވާހަކަ"
-                ? "bg-pink-700"
-                : "bg-pink-600 hover:bg-pink-700"
-            }`}
-          >
-            <BookOpen size={16} />
-            <span>ވާހަކަ</span>
-          </button>
-
-          {activeCategory && (
+        <div className="mb-8">
+          <div className="flex flex-wrap justify-center gap-3 mb-6">
             <button
-              onClick={() => handleCategoryFilter(activeCategory)}
-              className="flex items-center gap-2 px-4 py-2 text-gray-700 transition bg-gray-200 rounded-full hover:bg-gray-300"
+              onClick={() =>
+                setActiveCategory(
+                  activeCategory === "އެހެނިހެން" ? null : "އެހެނިހެން"
+                )
+              }
+              className={`flex items-center gap-2 px-5 py-2 text-white transition rounded-full ${
+                activeCategory === "އެހެނިހެން"
+                  ? "bg-pink-600"
+                  : "bg-pink-600 hover:bg-pink-700"
+              }`}
             >
-              <X size={16} />
-              <span>Clear filter</span>
+              <BookOpen size={16} />
+              <span>އެހެނިހެން</span>
             </button>
-          )}
-        </div>
+            <button
+              onClick={() =>
+                setActiveCategory(
+                  activeCategory === "(22-21) 9" ? null : "(22-21) 9"
+                )
+              }
+              className={`flex items-center gap-2 px-5 py-2 text-white transition rounded-full ${
+                activeCategory === "(22-21) 9"
+                  ? "bg-purple-600"
+                  : "bg-purple-600 hover:bg-purple-700"
+              }`}
+            >
+              <BookOpen size={16} />
+              <span> (22-21) 9 ގުރޭޑް</span>
+            </button>
+            <button
+              onClick={() =>
+                setActiveCategory(
+                  activeCategory === "(22-21) 8" ? null : "(22-21) 8"
+                )
+              }
+              className={`flex items-center gap-2 px-5 py-2 text-white transition rounded-full ${
+                activeCategory === "(22-21) 8"
+                  ? "bg-blue-600"
+                  : "bg-blue-600 hover:bg-blue-700"
+              }`}
+            >
+              <BookOpen size={16} />
+              <span> (22-21) 8 ގުރޭޑް</span>
+            </button>
 
-        {/* Search Bar */}
-        <div className="relative mb-6">
-          <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-lg shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
-            <Search className="w-5 h-5 text-gray-400" />
-            <input
-              type="text"
-              placeholder=" ... ފައިލް ހޯދާލުމަށް"
-              value={searchTerm}
-              onChange={handleSearch}
-              className="block w-full p-2 text-right border-0 focus:ring-0 sm:text-sm"
-            />
-            {searchTerm && (
-              <button onClick={clearSearch} className="p-1">
-                <X className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+            {(searchTerm || activeCategory) && (
+              <button
+                onClick={() => {
+                  setSearchTerm("");
+                  setActiveCategory(null);
+                }}
+                className="flex items-center gap-2 px-5 py-2 text-gray-700 transition bg-gray-200 rounded-full hover:bg-gray-300"
+              >
+                <X size={16} />
+                <span>ފިލްޓަރ ފޮހެލާ</span>
               </button>
             )}
           </div>
+          <div className="relative mb-6">
+            <div className="flex flex-row-reverse items-center px-3 py-2 bg-white border border-gray-300 rounded-full shadow-sm focus-within:border-purple-500 focus-within:ring-1 focus-within:ring-purple-500">
+              <Search className="w-5 h-5 text-gray-400" />
+              <input
+                type="text"
+                placeholder=" ... ފައިލް ހޯދާލުމަށް"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                className="block w-full p-2 text-right border-0 rounded-full focus:border-0 focus:ring-0 focus:outline-none sm:text-sm"
+              />
+              {searchTerm && (
+                <button onClick={() => setSearchTerm("")} className="p-1">
+                  <X className="w-4 h-4 text-gray-400 hover:text-gray-600" />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
 
-        {/* File Grid */}
-        <div
-          dir="rtl"
-          className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-2"
-        >
-          {filteredUploads.length > 0 ? (
-            filteredUploads.map((item) => (
+        {filteredLessons.length > 0 ? (
+          <div
+            dir="rtl"
+            className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3"
+          >
+            {filteredLessons.map((lesson) => (
               <div
-                key={item.id}
-                className="overflow-hidden transition-all bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md"
+                key={lesson.id}
+                onClick={() => setSelectedLesson(lesson)}
+                className="overflow-hidden transition-all bg-white border border-purple-100 shadow-sm cursor-pointer rounded-xl hover:shadow-md hover:scale-100"
               >
-                <div className={`h-2 ${getCategoryColor(item.category)}`}></div>
-                <div className="p-4">
-                  <div className="flex items-start justify-between">
-                    <div className="flex items-center">
-                      <div
-                        className={`flex items-center justify-center w-10 h-10 rounded-full bg-${
-                          item.category ? item.category : "gray"
-                        }-100`}
-                      >
-                        {getFileIcon(item.name, item.category)}
-                      </div>
-                      <div className="ml-3">
-                        <h3
-                          className="text-sm font-medium text-gray-900 truncate sm:text-base"
-                          title={item.name}
-                        >
-                          {item.name}
-                        </h3>
-                        <div className="flex items-center mt-1 text-xs text-gray-500 sm:text-sm">
-                          <span>{item.uploadedAt.toLocaleDateString()}</span>
-                          <span className="mx-1">•</span>
-                          <span>{item.size}</span>
-                        </div>
-                      </div>
+                <div
+                  className={`h-2 ${getCategoryColor(lesson.category)}`}
+                ></div>
+                <div className="relative">
+                  {lesson.image && (
+                    <img
+                      src={lesson.image}
+                      alt={lesson.title}
+                      className="object-cover w-full h-48"
+                    />
+                  )}
+                  {lesson.category && (
+                    <div
+                      className={`absolute top-3 right-3 px-3 py-1 text-sm font-medium text-white rounded-full ${getCategoryColor(
+                        lesson.category
+                      )}`}
+                    >
+                      {lesson.category}
                     </div>
-                  </div>
+                  )}
+                </div>
+                <div className="p-5">
+                  <h2 className="mb-3 text-xl font-bold text-purple-800 font-utheemu">
+                    {lesson.title}
+                  </h2>
+                  <p className="text-sm text-gray-600 font-utheemu">
+                    {lesson.summary}
+                  </p>
 
                   <div className="flex items-center justify-between mt-4">
-                    <div className="flex items-center space-x-2">
-                      {item.category && (
-                        <div
-                          className={`flex items-center gap-1 px-2 py-1 text-xs font-medium text-white rounded-full ${getCategoryColor(
-                            item.category
-                          )}`}
-                        >
-                          {getCategoryIcon(item.category)}
-                          <span className="capitalize">{item.category}</span>
-                        </div>
-                      )}
-                      {item.type && (
-                        <span
-                          className={`inline-flex items-center px-2 py-1 text-xs font-medium rounded-full ${getFileTypeColor(
-                            item.type
-                          )}`}
-                        >
-                          {item.type}
-                        </span>
-                      )}
+                    <div className="flex items-center gap-2">
+                      <BookOpen
+                        className={`w-5 h-5 ${getCategoryTextColor(
+                          lesson.category
+                        )}`}
+                      />
+                      <span className="text-sm text-gray-500">ފިލާވަޅު</span>
                     </div>
-                    <a
-                      href={item.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2 text-gray-400 transition-colors rounded-full hover:text-purple-600 hover:bg-purple-50"
-                    >
-                      <Download size={18} />
-                    </a>
+                    {lesson.driveLink && (
+                      <div className="flex items-center gap-1 text-purple-600">
+                        <FileText className="w-4 h-4" />
+                        <span className="text-sm">PDF</span>
+                      </div>
+                    )}
                   </div>
                 </div>
               </div>
-            ))
-          ) : (
-            <div className="col-span-1 py-16 text-center sm:col-span-2 lg:col-span-3">
-              <div className="flex flex-col items-center justify-center">
-                <FileText className="w-12 h-12 text-gray-400" />
-                <h3 className="mt-2 text-sm font-medium text-gray-900">
-                  No files found
-                </h3>
-                <p className="mt-1 text-sm text-gray-500">
-                  {activeCategory
-                    ? `No ${activeCategory} files match your search`
-                    : "No files match your search"}
-                </p>
-                {(searchTerm || activeCategory) && (
-                  <button
-                    onClick={() => {
-                      setSearchTerm("");
-                      setActiveCategory(null);
-                      setFilteredUploads(uploads);
-                    }}
-                    className="px-4 py-2 mt-4 text-sm font-medium text-white bg-purple-600 rounded-md hover:bg-purple-700"
+            ))}
+          </div>
+        ) : (
+          <div className="p-12 text-center">
+            <div className="flex flex-col items-center justify-center">
+              <FileText className="w-16 h-16 text-gray-400" />
+              <h3 className="mt-4 text-xl font-medium text-gray-900">
+                ފިލާވަޅެއް ނުފެނުނު
+              </h3>
+              <p className="mt-2 text-gray-500">
+                {activeCategory
+                  ? `"${activeCategory}" ކެޓަގަރީގެ ފިލާވަޅެއް ނުފެނުނު`
+                  : "ހޯދި ފިލާވަޅެއް ނުފެނުނު"}
+              </p>
+            </div>
+          </div>
+        )}
+      </div>
+
+      {selectedLesson && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center text-right bg-black/70 backdrop-blur-sm">
+          <div className="relative w-full max-w-4xl p-0 mx-4 bg-white rounded-2xl overflow-hidden max-h-[90vh]">
+            <div className="flex items-center justify-between p-4 border-b border-gray-200">
+              <button
+                onClick={goToPrevious}
+                className="p-2 text-purple-600 transition rounded-full hover:bg-purple-100"
+                aria-label="Previous lesson"
+              >
+                <ChevronLeft size={20} />
+              </button>
+
+              <div className="flex items-center text-center ">
+                {selectedLesson.category && (
+                  <span
+                    className={`px-3 py-1 mr-2 text-sm font-medium text-white   rounded-full ${getCategoryColor(
+                      selectedLesson.category
+                    )}`}
                   >
-                    Clear all filters
-                  </button>
+                    {selectedLesson.category}
+                  </span>
                 )}
+                <h3 className="text-lg font-semibold text-purple-800 font-utheemu">
+                  {selectedLesson.title}
+                </h3>
+              </div>
+
+              <div className="flex items-center">
+                <button
+                  onClick={goToNext}
+                  className="p-2 mr-2 text-purple-600 transition rounded-full hover:bg-purple-100"
+                  aria-label="Next lesson"
+                >
+                  <ChevronRight size={20} />
+                </button>
+                <button
+                  onClick={() => setSelectedLesson(null)}
+                  className="p-2 text-gray-600 transition rounded-full hover:bg-gray-100"
+                  aria-label="Close"
+                >
+                  <X size={20} />
+                </button>
               </div>
             </div>
-          )}
+
+            {selectedLesson.driveLink && (
+              <div className="flex px-4 pt-4 mb-4 space-x-2">
+                <button
+                  onClick={() => setViewMode("content")}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition flex items-center ${
+                    viewMode === "content"
+                      ? "bg-purple-700 text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
+                >
+                  <BookOpen className="w-4 h-4 mr-2" />
+                  ލިޔުން
+                </button>
+                <button
+                  onClick={() => setViewMode("pdf")}
+                  className={`px-4 py-2 text-sm font-medium rounded-lg transition flex items-center ${
+                    viewMode === "pdf"
+                      ? "bg-purple-700 text-white"
+                      : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                  }`}
+                >
+                  <FileText className="w-4 h-4 mr-2" />
+                  PDF
+                </button>
+
+                {selectedLesson.driveLink && (
+                  <a
+                    href={selectedLesson.driveLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center px-4 py-2 ml-auto text-sm font-medium text-white transition bg-purple-600 rounded-lg hover:bg-purple-700"
+                  >
+                    <Download className="w-4 h-4 mr-2" />
+                    ޑައުންލޯޑު
+                  </a>
+                )}
+              </div>
+            )}
+
+            <div className="overflow-y-auto max-h-[calc(90vh-140px)]">
+              {viewMode === "content" ? (
+                <div className="p-6">
+                  {selectedLesson.image && (
+                    <img
+                      src={selectedLesson.image}
+                      alt={selectedLesson.title}
+                      className="object-cover w-full mb-6 rounded-xl h-60"
+                    />
+                  )}
+                  <p
+                    dir="rtl"
+                    className={`text-xl leading-loose text-gray-800 whitespace-pre-line font-utheemu ${
+                      selectedLesson.justify ? "text-justify" : "text-right"
+                    }`}
+                  >
+                    {selectedLesson.content}
+                  </p>
+                </div>
+              ) : (
+                <div className="w-full h-[70vh]">
+                  <iframe
+                    src={getPreviewUrl(selectedLesson.driveLink)}
+                    className="w-full h-full border border-gray-200"
+                    allow="autoplay"
+                    allowFullScreen
+                  ></iframe>
+                </div>
+              )}
+            </div>
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
-};
-
-export default UploadList;
+}

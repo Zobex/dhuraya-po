@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 "use client";
 import React, { useState } from "react";
@@ -13,6 +14,8 @@ import {
   BookOpenCheck,
   Sparkle,
   Users,
+  FileAudio,
+  Projector,
 } from "lucide-react";
 
 type UploadItem = {
@@ -22,12 +25,7 @@ type UploadItem = {
   href: string;
   type?: string;
   size?: string;
-  category?:
-    | "ދެކޭގޮތްހާމަކުރާ"
-    | "އޮޅުންފިލުވައިދޭ"
-    | "ޙިޔާލީ"
-    | "ބަޙުސްކުރާ"
-    | "ވާހަކަ";
+  category?: "ފަތްފުއްތަށް" | "އަޑު" | "މަންޒަރު" | "ޕުރެޒެންޓޭޝަން" | "ވާހަކަ";
 };
 
 const uploads: UploadItem[] = [
@@ -38,7 +36,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/document.pdf",
     type: "PDF",
     size: "2.4 MB",
-    category: "ދެކޭގޮތްހާމަކުރާ",
+    category: "ފަތްފުއްތަށް",
   },
   {
     id: "2",
@@ -47,7 +45,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/notes.docx",
     type: "DOCX",
     size: "534 KB",
-    category: "އޮޅުންފިލުވައިދޭ",
+    category: "އަޑު",
   },
   {
     id: "3",
@@ -56,7 +54,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/photo.png",
     type: "PNG",
     size: "1.2 MB",
-    category: "ޙިޔާލީ",
+    category: "މަންޒަރު",
   },
   {
     id: "4",
@@ -65,7 +63,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/report.xlsx",
     type: "XLSX",
     size: "876 KB",
-    category: "ބަޙުސްކުރާ",
+    category: "ޕުރެޒެންޓޭޝަން",
   },
   {
     id: "5",
@@ -74,7 +72,7 @@ const uploads: UploadItem[] = [
     href: "/uploads/resources.zip",
     type: "ZIP",
     size: "4.7 MB",
-    category: "ވާހަކަ",
+    category: "ޕުރެޒެންޓޭޝަން",
   },
   {
     id: "6",
@@ -83,25 +81,25 @@ const uploads: UploadItem[] = [
     href: "/uploads/story.pdf",
     type: "PDF",
     size: "1.5 MB",
-    category: "ވާހަކަ",
+    category: "ޕުރެޒެންޓޭޝަން",
   },
 ];
 
 const getFileIcon = (fileName: string, category?: string) => {
-  if (category === "އޮޅުންފިލުވައިދޭ") {
-    return <BookOpen className="text-purple-600" size={20} />;
+  if (category === "އަޑު") {
+    return <FileAudio className="text-purple-600" size={20} />;
   }
-  if (category === "ޙިޔާލީ") {
+  if (category === "މަންޒަރު") {
     return <BookOpen className="text-blue-600" size={20} />;
   }
-  if (category === "ބަޙުސްކުރާ") {
-    return <BookOpen className="text-green-600" size={20} />;
+  if (category === "ޕުރެޒެންޓޭޝަން") {
+    return <Projector className="text-green-600" size={20} />;
   }
   if (category === "ވާހަކަ") {
     return <BookOpen className="text-pink-600" size={20} />;
   }
-  if (category === "ދެކޭގޮތްހާމަކުރާ") {
-    return <BookOpen className="text-pink-900" size={20} />;
+  if (category === "ފަތްފުއްތަށް") {
+    return <Image className="text-pink-900" size={20} />;
   }
 
   if (fileName.match(/\.(pdf|docx?|txt)$/i)) {
@@ -139,15 +137,15 @@ const getFileTypeColor = (type?: string) => {
 
 const getCategoryColor = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
+    case "އަޑު":
       return "bg-purple-600";
-    case "ޙިޔާލީ":
+    case "މަންޒަރު":
       return "bg-blue-600";
-    case "ބަޙުސްކުރާ":
+    case "ޕުރެޒެންޓޭޝަން":
       return "bg-green-600";
     case "ވާހަކަ":
       return "bg-pink-600";
-    case "ދެކޭގޮތްހާމަކުރާ":
+    case "ފަތްފުއްތަށް":
       return "bg-pink-900";
     default:
       return "bg-gray-600";
@@ -156,16 +154,16 @@ const getCategoryColor = (category?: string) => {
 
 const getCategoryIcon = (category?: string) => {
   switch (category) {
-    case "އޮޅުންފިލުވައިދޭ":
-      return <BookOpenCheck size={16} />;
-    case "ޙިޔާލީ":
-      return <Sparkle size={16} />;
-    case "ބަޙުސްކުރާ":
-      return <Users size={16} />;
+    case "އަޑު":
+      return <FileAudio size={16} />;
+    case "މަންޒަރު":
+      return <Image size={16} />;
+    case "ޕުރެޒެންޓޭޝަން":
+      return <Projector size={16} />;
     case "ވާހަކަ":
       return <BookOpen size={16} />;
-    case "ދެކޭގޮތްހާމަކުރާ":
-      return <Lightbulb size={16} />;
+    case "ފަތްފުއްތަށް":
+      return <BookOpen size={16} />;
     default:
       return <FileText size={16} />;
   }
@@ -233,48 +231,48 @@ const UploadList = () => {
         {/* Category Buttons */}
         <div className="flex flex-wrap justify-center gap-2 mb-6">
           <button
-            onClick={() => handleCategoryFilter("ދެކޭގޮތްހާމަކުރާ")}
+            onClick={() => handleCategoryFilter("ފަތްފުއްތަށް")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ދެކޭގޮތްހާމަކުރާ"
+              activeCategory === "ފަތްފުއްތަށް"
                 ? "bg-pink-900"
                 : "bg-pink-700 hover:bg-pink-900"
             }`}
           >
-            <Lightbulb size={16} />
-            <span>ދެކޭގޮތްހާމަކުރާ</span>
+            <BookOpen size={16} />
+            <span>ފަތްފުއްތަށް</span>
           </button>
           <button
-            onClick={() => handleCategoryFilter("އޮޅުންފިލުވައިދޭ")}
+            onClick={() => handleCategoryFilter("އަޑު")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "އޮޅުންފިލުވައިދޭ"
+              activeCategory === "އަޑު"
                 ? "bg-purple-700"
                 : "bg-purple-600 hover:bg-purple-700"
             }`}
           >
-            <BookOpenCheck size={16} />
-            <span>އޮޅުންފިލުވައިދޭ</span>
+            <FileAudio size={16} />
+            <span>އަޑު</span>
           </button>
           <button
-            onClick={() => handleCategoryFilter("ޙިޔާލީ")}
+            onClick={() => handleCategoryFilter("މަންޒަރު")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ޙިޔާލީ"
+              activeCategory === "މަންޒަރު"
                 ? "bg-blue-700"
                 : "bg-blue-600 hover:bg-blue-700"
             }`}
           >
-            <Sparkle size={16} />
-            <span>ޙިޔާލީ</span>
+            <Image size={16} />
+            <span>މަންޒަރު</span>
           </button>
           <button
-            onClick={() => handleCategoryFilter("ބަޙުސްކުރާ")}
+            onClick={() => handleCategoryFilter("ޕުރެޒެންޓޭޝަން")}
             className={`flex items-center gap-2 px-4 py-2 text-white transition rounded-full ${
-              activeCategory === "ބަޙުސްކުރާ"
+              activeCategory === "ޕުރެޒެންޓޭޝަން"
                 ? "bg-green-700"
                 : "bg-green-600 hover:bg-green-700"
             }`}
           >
-            <Users size={16} />
-            <span>ބަޙުސްކުރާ</span>
+            <Projector size={16} />
+            <span>ޕުރެޒެންޓޭޝަން</span>
           </button>
           <button
             onClick={() => handleCategoryFilter("ވާހަކަ")}
